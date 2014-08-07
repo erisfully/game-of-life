@@ -5,28 +5,28 @@ class Grid
   end
 
   def tick
-    coordinate_array(@array)
+    check_coordinates(@array)
   end
 
-  def coordinate_array(array)
-    co_array = []
-    count = 1
-    array.each {|row|
-      co_array << [count]
-      count += 1
-    }
-      co_array.collect {|y|
-        count = 1
-      x_array = []
-        array.first.length.times do
-          x_array.push([count,y])
-          count += 1
-        end
-        x_array
-      }
-  end
+  # def coordinate_array(array)
+  #   co_array = []
+  #   count = 1
+  #   array.each {|row|
+  #     co_array << [count]
+  #     count += 1
+  #   }
+  #     co_array.collect {|y|
+  #       count = 1
+  #     x_array = []
+  #       array.first.length.times do
+  #         x_array.push([count,y])
+  #         count += 1
+  #       end
+  #       x_array
+  #     }
+  # end
 
-  def check_coordinates (array, co_array)
+  def check_coordinates (array)
     count = 0
 
     array.each_with_index { |row, index|
@@ -46,4 +46,4 @@ end
   # Check each coordinate for surrounding values
   # get number of living cells
   # if else applying rules
-  #
+  #see Savannah's code and this: http://vimeo.com/31403388
